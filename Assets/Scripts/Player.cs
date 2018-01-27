@@ -11,8 +11,6 @@ public class Player : MonoBehaviour {
     int balaActual;
     float speedX = 10;
     float tiempoDisparos;
-    float tiempoSaltos;
-    bool movio = false;
     Vector3 moveVector;
 
 	// Use this for initialization

@@ -8,13 +8,18 @@ public class BalaMov : MonoBehaviour {
     Vector3 PosOriginal;
 	// Use this for initialization
 	void Start () {
+        direccion = 5;
         tiempo = 0;
         PosOriginal = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        tiempo += Time.deltaTime ;
+        if (direccion != 5)
+        {
+            tiempo += Time.deltaTime;
+        }
+        
         if (tiempo >= 20f)
         {
             direccion = 5;
@@ -42,5 +47,16 @@ public class BalaMov : MonoBehaviour {
     public void LLenarDirec(int direc)
     {
         direccion = direc;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Enemigo"))
+        {
+            col.gameObject.GetComponent<Enemigo>().RestarVida();
+            direccion = 5;
+            transform.position = PosOriginal;
+            tiempo = 0;
+        }
     }
 }
