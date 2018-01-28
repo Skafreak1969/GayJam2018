@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bala
-  - qweqe
   - BalaMitosis
   - Enemigo
   - DeathTriggers
+  - BalaEnemigo
   layers:
   - Default
   - TransparentFX
